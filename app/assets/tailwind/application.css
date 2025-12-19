@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+/* Include project styles so Tailwind processes @apply and layers */
+@import "../stylesheets/base.css";
+@import "../stylesheets/layout.css";
+@import "../stylesheets/components.css";
+@import "../stylesheets/pages/home.css";
+@import "../stylesheets/pages/workspace.css";

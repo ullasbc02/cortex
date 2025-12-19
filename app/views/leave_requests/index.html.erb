@@ -1,22 +1,26 @@
-<h1>Leave Requests</h1>
+<div class="card">
+  <h1>Leave Requests</h1>
 
-<table border="1">
-  <tr>
-    <th>Employee</th>
-    <th>Period</th>
-    <th>Status</th>
-    <th>Days</th>
-  </tr>
+  <table>
+    <thead>
+      <tr>
+        <th>Employee</th>
+        <th>Period</th>
+        <th>Status</th>
+        <th>Days</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @leave_requests.each do |lr| %>
+        <tr>
+          <td><%= lr.employee_name %></td>
+          <td><%= lr.start_date %> → <%= lr.end_date %></td>
+          <td><%= lr.status %></td>
+          <td><%= lr.duration %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-  <% @leave_requests.each do |lr| %>
-    <tr>
-      <td><%= lr.employee_name %></td>
-      <td><%= lr.start_date %> → <%= lr.end_date %></td>
-      <td><%= lr.status %></td>
-      <td><%= lr.duration %></td>
-    </tr>
-  <% end %>
-</table>
-
-<br>
-<a href="/leave_requests/new">New Leave Request</a>
+  <a href="/leave_requests/new" class="btn btn-primary">New Leave Request</a>
+</div>
