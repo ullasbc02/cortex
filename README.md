@@ -35,7 +35,7 @@ Views (manual)
 
 CRUD flows
 
-Perfect — now you’re asking the **right enterprise-level question** 👍
+Perfect — now you’re asking the **right enterprise-level question** 
 Forget Todo as a *toy*. Let’s treat it as a **pattern** you will reuse for **any real application feature**.
 
 I’ll explain this **as a repeatable recipe** you can apply to **any “simple functionality”** in an enterprise Rails app.
@@ -44,7 +44,7 @@ I’ll use a **generic example** instead of Todo so you can generalize it.
 
 ---
 
-# 🏗️ The Enterprise Rails Pattern (End-to-End)
+#  The Enterprise Rails Pattern (End-to-End)
 
 > Any feature in Rails = **Data + Flow + Presentation**
 
@@ -52,7 +52,7 @@ No matter how big the app is, every feature still goes through the **same 6 laye
 
 ---
 
-## 🎯 Example Feature (Generic, Enterprise-style)
+##  Example Feature (Generic, Enterprise-style)
 
 Let’s say your enterprise app needs this feature:
 
@@ -71,7 +71,7 @@ Now we’ll implement it end-to-end using:
 
 ---
 
-# 1️⃣ Migration — *Define the data structure*
+# 1 Migration — *Define the data structure*
 
 ### Question this layer answers
 
@@ -104,12 +104,12 @@ Run:
 rails db:migrate
 ```
 
-📌 **Enterprise rule**
+**Enterprise rule**
 Migrations describe **structure**, not behavior.
 
 ---
 
-# 2️⃣ Model — *Define rules & meaning of the data*
+# 2 Model — *Define rules & meaning of the data*
 
 ### Question this layer answers
 
@@ -127,15 +127,15 @@ end
 
 ### What belongs here
 
-✅ Validations
-✅ Business logic
-✅ Domain rules
-✅ Query helpers
+ Validations
+ Business logic
+ Domain rules
+ Query helpers
 
-❌ HTTP logic
-❌ UI logic
+ HTTP logic
+ UI logic
 
-📌 **Enterprise rule**
+**Enterprise rule**
 Models should be reusable by:
 
 * controllers
@@ -145,7 +145,7 @@ Models should be reusable by:
 
 ---
 
-# 3️⃣ Routes — *Expose functionality to the outside world*
+# 3 Routes — *Expose functionality to the outside world*
 
 ### Question this layer answers
 
@@ -165,12 +165,12 @@ Routes are:
 * predictable
 * easy to audit
 
-📌 **Enterprise rule**
+**Enterprise rule**
 Routes should read like **API documentation**.
 
 ---
 
-# 4️⃣ Controller — *Orchestrate the request*
+# 4 Controller — *Orchestrate the request*
 
 ### Question this layer answers
 
@@ -207,19 +207,19 @@ end
 
 ### What belongs here
 
-✅ Calling models
-✅ Handling success/failure
-✅ Choosing views or redirects
+ Calling models
+ Handling success/failure
+ Choosing views or redirects
 
-❌ Business rules
-❌ SQL logic
+ Business rules
+ SQL logic
 
-📌 **Enterprise rule**
+**Enterprise rule**
 Controllers should feel **boring** — that’s good.
 
 ---
 
-# 5️⃣ Views — *Present the data*
+# 5 Views — *Present the data*
 
 ### Question this layer answers
 
@@ -263,18 +263,18 @@ Controllers should feel **boring** — that’s good.
 </form>
 ```
 
-📌 **Enterprise rule**
+**Enterprise rule**
 Views only **display** data — they never decide behavior.
 
 ---
 
-# 6️⃣ CRUD Flow — *How everything connects*
+# 6 CRUD Flow — *How everything connects*
 
 CRUD is **not code**, it’s a **mental flow**.
 
 ---
 
-## 🟢 CREATE Flow (Enterprise view)
+##  CREATE Flow (Enterprise view)
 
 1. User submits form
 2. Route maps to controller
@@ -288,16 +288,16 @@ Every enterprise feature follows this pattern.
 
 ---
 
-## 🧠 Universal Rails Feature Template (Memorize this)
+##  Universal Rails Feature Template (Memorize this)
 
 When adding **any new feature**, ask these questions **in order**:
 
-1️⃣ What data do I need? → **Migration**
-2️⃣ What rules apply? → **Model**
-3️⃣ How is it accessed? → **Routes**
-4️⃣ How is it handled? → **Controller**
-5️⃣ How is it shown? → **Views**
-6️⃣ How does it flow? → **CRUD flow**
+1 What data do I need? → **Migration**
+2 What rules apply? → **Model**
+3 How is it accessed? → **Routes**
+4 How is it handled? → **Controller**
+5 How is it shown? → **Views**
+6 How does it flow? → **CRUD flow**
 
 This works for:
 
@@ -309,7 +309,7 @@ This works for:
 
 ---
 
-## 🔑 Final Enterprise Insight
+##  Final Enterprise Insight
 
 > **Rails is not about Todo apps.
 > Todo apps are just the smallest example of enterprise patterns.**
