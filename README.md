@@ -318,3 +318,33 @@ Once you understand the **pattern**, the domain doesn’t matter.
 
 ---
 
+app/
+├── controllers/
+│   ├── workspaces_controller.rb
+│   ├── documents_controller.rb
+│   └── questions_controller.rb
+│
+├── models/
+│   ├── workspace.rb
+│   ├── document.rb
+│   ├── chunk.rb
+│   └── message.rb
+│
+├── jobs/
+│   ├── document_ingest_job.rb
+│   └── agent_reasoning_job.rb
+│
+├── services/
+│   ├── ollama/
+│   │   ├── client.rb
+│   │   └── embeddings.rb
+│   ├── agent/
+│   │   ├── runner.rb
+│   │   └── toolbox.rb
+│   └── chunker.rb
+│
+├── views/
+│   └── workspaces/
+│
+└── channels/
+    └── agent_channel.rb

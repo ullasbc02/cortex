@@ -1,0 +1,9 @@
+/* app/assets/stylesheets/base.css */
+
+body {
+  @apply bg-gray-100 text-gray-900;
+}
+
+h1, h2, h3 {
+  @apply font-semibold;
+}

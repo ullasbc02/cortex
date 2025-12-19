@@ -1,0 +1,12 @@
+/* stylelint-disable-next-line at-rule-no-unknown */
+@tailwind base;
+/* stylelint-disable-next-line at-rule-no-unknown */
+@tailwind components;
+/* stylelint-disable-next-line at-rule-no-unknown */
+@tailwind utilities;
+
+@import "base.css";
+@import "layout.css";
+@import "components.css";
+@import "pages/home.css";
+@import "pages/workspace.css";

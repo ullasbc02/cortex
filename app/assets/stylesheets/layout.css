@@ -1,0 +1,9 @@
+/* app/assets/stylesheets/layout.css */
+
+.navbar {
+  @apply bg-white shadow;
+}
+
+.container {
+  @apply max-w-6xl mx-auto px-6;
+}

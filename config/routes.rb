@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  root "leave_requests#index"
+  root "workspaces#index"
 
+  get "/workspace", to: "workspaces#index"
+  get "/home", to: "workspaces#home"
   get  "/leave_requests",     to: "leave_requests#index"
   get  "/leave_requests/new", to: "leave_requests#new"
   post "/leave_requests",     to: "leave_requests#create"

@@ -1,24 +1,32 @@
-<h1>New Leave Request</h1>
+<div class="card">
+  <h1>New Leave Request</h1>
 
-<form action="/leave_requests" method="post">
-  <%= csrf_meta_tags %>
+  <form action="/leave_requests" method="post">
+    <%= csrf_meta_tags %>
 
-  <label>Employee Name</label><br>
-  <input type="text" name="leave_request[employee_name]" /><br><br>
+    <div>
+      <label>Employee Name</label><br>
+      <input type="text" name="leave_request[employee_name]" />
+    </div>
 
-  <label>Start Date</label><br>
-  <input type="date" name="leave_request[start_date]" /><br><br>
+    <div>
+      <label>Start Date</label><br>
+      <input type="date" name="leave_request[start_date]" />
+    </div>
 
-  <label>End Date</label><br>
-  <input type="date" name="leave_request[end_date]" /><br><br>
+    <div>
+      <label>End Date</label><br>
+      <input type="date" name="leave_request[end_date]" />
+    </div>
 
-  <button type="submit">Submit</button>
-</form>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
 
-<% if @leave_request.errors.any? %>
-  <ul>
-    <% @leave_request.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-  </ul>
-<% end %>
+  <% if @leave_request.errors.any? %>
+    <ul>
+      <% @leave_request.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>

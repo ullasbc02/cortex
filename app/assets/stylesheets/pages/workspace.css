@@ -1,0 +1,5 @@
+/* app/assets/stylesheets/pages/workspace.css */
+
+.workspace-card {
+  @apply hover:shadow-lg transition;
+}
