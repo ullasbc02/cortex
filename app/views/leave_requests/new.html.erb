@@ -1,0 +1,24 @@
+<h1>New Leave Request</h1>
+
+<form action="/leave_requests" method="post">
+  <%= csrf_meta_tags %>
+
+  <label>Employee Name</label><br>
+  <input type="text" name="leave_request[employee_name]" /><br><br>
+
+  <label>Start Date</label><br>
+  <input type="date" name="leave_request[start_date]" /><br><br>
+
+  <label>End Date</label><br>
+  <input type="date" name="leave_request[end_date]" /><br><br>
+
+  <button type="submit">Submit</button>
+</form>
+
+<% if @leave_request.errors.any? %>
+  <ul>
+    <% @leave_request.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>

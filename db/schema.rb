@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2025_12_18_230309) do
+ActiveRecord::Schema[8.1].define(version: 2025_12_19_021226) do
+  create_table "leave_requests", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.string "employee_name"
+    t.date "end_date"
+    t.date "start_date"
+    t.string "status", default: "Pending"
+    t.datetime "updated_at", null: false
+  end
+
   create_table "todos", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.text "description"

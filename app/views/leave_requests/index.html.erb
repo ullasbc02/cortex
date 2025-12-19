@@ -1,0 +1,22 @@
+<h1>Leave Requests</h1>
+
+<table border="1">
+  <tr>
+    <th>Employee</th>
+    <th>Period</th>
+    <th>Status</th>
+    <th>Days</th>
+  </tr>
+
+  <% @leave_requests.each do |lr| %>
+    <tr>
+      <td><%= lr.employee_name %></td>
+      <td><%= lr.start_date %> → <%= lr.end_date %></td>
+      <td><%= lr.status %></td>
+      <td><%= lr.duration %></td>
+    </tr>
+  <% end %>
+</table>
+
+<br>
+<a href="/leave_requests/new">New Leave Request</a>
