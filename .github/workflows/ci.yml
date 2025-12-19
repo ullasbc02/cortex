@@ -69,12 +69,13 @@ jobs:
     runs-on: ubuntu-latest
     services:
       postgres:
-        image: postgres:16
+        image: ankane/pgvector:pg16
         ports:
           - 5432:5432
         env:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: cortex_test
         options: >-
           --health-cmd "pg_isready -U postgres -h 127.0.0.1"
           --health-interval 10s
@@ -101,12 +102,13 @@ jobs:
     runs-on: ubuntu-latest
     services:
       postgres:
-        image: postgres:16
+        image: ankane/pgvector:pg16
         ports:
           - 5432:5432
         env:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: cortex_test
         options: >-
           --health-cmd "pg_isready -U postgres -h 127.0.0.1"
           --health-interval 10s
