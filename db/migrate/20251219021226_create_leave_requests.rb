@@ -6,7 +6,6 @@ class CreateLeaveRequests < ActiveRecord::Migration[8.1]
       t.date :end_date
       t.string :status, default: 'Pending'
 
-      
       t.timestamps
     end
   end
