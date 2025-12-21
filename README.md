@@ -318,6 +318,7 @@ Once you understand the **pattern**, the domain doesn’t matter.
 
 ---
 
+```
 app/
 ├── controllers/
 │   ├── workspaces_controller.rb
@@ -347,4 +348,5 @@ app/
 │   └── workspaces/
 │
 └── channels/
-    └── agent_channel.rb
+  └── agent_channel.rb
+```

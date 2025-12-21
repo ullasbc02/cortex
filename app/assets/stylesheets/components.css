@@ -11,3 +11,33 @@
 .card {
   @apply bg-white p-6 rounded-lg shadow;
 }
+
+/* Card list layout */
+.card-list {
+  @apply grid gap-4 sm:grid-cols-2 lg:grid-cols-3;
+}
+
+.card-title {
+  @apply text-lg font-semibold text-gray-900 mb-2;
+}
+
+.card-content {
+  @apply text-sm text-gray-700 mb-3;
+}
+
+.card-meta {
+  @apply text-xs text-gray-500;
+}
+
+/* Form components */
+.form-label {
+  @apply block text-sm font-medium text-gray-700;
+}
+
+.form-input {
+  @apply mt-1 w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm shadow-sm focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500;
+}
+
+.form-textarea {
+  @apply mt-1 w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm shadow-sm focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500;
+}

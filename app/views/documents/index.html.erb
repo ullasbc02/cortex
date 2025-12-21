@@ -1,0 +1,23 @@
+<h2>Documents</h2>
+
+<%= button_to "Add Document", new_document_path, method: :get, class: "btn btn-primary" %>
+<br>
+<% if @documents.any? %>
+  <ul class="card-list">
+    <% @documents.each do |doc| %>
+      <li class="card">
+        <h3 class="card-title"><%= doc.title %></h3>
+
+        <p class="card-content">
+          <%= truncate(doc.content, length: 200) %>
+        </p>
+
+        <small class="card-meta">
+          Added <%= time_ago_in_words(doc.created_at) %> ago
+        </small>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No documents yet.</p>
+<% end %>
