@@ -1,0 +1,31 @@
+<div class="container">
+  <h1 class="card-title">Search</h1>
+
+  <%= form_with url: search_path, method: :get, local: true do %>
+    <div>
+      <%= label_tag :q, "Query", class: "form-label" %>
+      <%= text_field_tag :q, params[:q], placeholder: "Enter your query", class: "form-input" %>
+    </div>
+    <br>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
+
+  <% if @query.present? %>
+    <div>
+      <h2 class="card-title">Results</h2>
+      <% if @chunks.present? %>
+        <ul>
+          <% @chunks.each do |c| %>
+            <li class="card">
+              <div class="card-meta">Document: <%= c.document_id %> • Position: <%= c.position %></div>
+              <div class="card-content"><%= c.content %></div>
+              <div class="card-meta">Distance: <%= c.distance %></div>
+            </li>
+          <% end %>
+        </ul>
+      <% else %>
+        <p class="card-meta">No results.</p>
+      <% end %>
+    </div>
+  <% end %>
+</div>
