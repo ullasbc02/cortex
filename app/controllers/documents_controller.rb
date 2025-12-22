@@ -14,6 +14,8 @@ class DocumentsController < ApplicationController
   def create
     @document = Document.new(document_params)
     if @document.save
+      # Run job synchronously for now (Solid Queue had issues with PostgreSQL)
+      DocumentChunkingJob.perform_now(@document.id)
       redirect_to documents_path, notice: "Document was successfully created."
     else
       render :new, status: :unprocessable_entity

@@ -4,7 +4,7 @@ class CreateDocuments < ActiveRecord::Migration[8.1]
       create_table :documents do |t|
         t.string :title
         t.text :content
-        t.column :embedding, :vector, limit: 1536
+        # t.column :embedding, :vector, limit: 1536
 
         t.timestamps
       end
