@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root "documents#index"
-  resources :documents, only: [ :index, :new, :create ]
+  resources :documents, only: [ :index, :new, :create, :destroy ]
   get "/search", to: "search#index"
   get  "/leave_requests",     to: "leave_requests#index"
   get  "/leave_requests/new", to: "leave_requests#new"
