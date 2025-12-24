@@ -17,7 +17,9 @@
             Added <%= time_ago_in_words(doc.created_at) %> ago
           </small>
           <%= button_to "Delete", document_path(doc), method: :delete, data: { confirm: "Are you sure you want to delete this document?" }, class: "btn btn-danger" %>
+          <%= button_to "Edit", edit_document_path(doc), method: :get, class: "btn btn-primary" %>
         </div>
+
       </li>
     <% end %>
   </ul>
