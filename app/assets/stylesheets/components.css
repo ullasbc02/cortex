@@ -8,6 +8,10 @@
   @apply bg-black text-white hover:bg-gray-800;
 }
 
+.btn-danger {
+  @apply bg-red-600 text-white hover:bg-red-700;
+}
+
 .card {
   @apply bg-white p-6 rounded-lg shadow;
 }
@@ -27,6 +31,10 @@
 
 .card-meta {
   @apply text-xs text-gray-500;
+}
+
+.card-footer {
+  @apply flex justify-between items-center;
 }
 
 /* Form components */

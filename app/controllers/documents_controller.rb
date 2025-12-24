@@ -22,6 +22,12 @@ class DocumentsController < ApplicationController
     end
   end
 
+  def destroy
+    @document = Document.find(params[:id])
+    @document.destroy
+    redirect_to documents_path, notice: "Document was successfully deleted."
+  end
+
   private
 
   def document_params

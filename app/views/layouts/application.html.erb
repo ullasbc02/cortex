@@ -14,9 +14,11 @@
     <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
     <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
 
-    <link rel="icon" href="/icon.png" type="image/png">
-    <link rel="icon" href="/icon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png">
 
     <%# Load built Tailwind CSS (served from app/assets/builds) %>
     <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %>
@@ -26,7 +28,10 @@
   <body>
     <nav class="navbar">
       <div class="container py-4 flex justify-between">
-        <h1>Cortex</h1>
+        <h1 class="flex items-center gap-2">
+          <img src="/android-chrome-192x192.png" alt="Cortex Logo" class="h-8 w-8">
+          <span>Cortex</span>
+        </h1>
       </div>
     </nav>
 
