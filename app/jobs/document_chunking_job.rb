@@ -8,8 +8,9 @@ class DocumentChunkingJob < ApplicationJob
 
     DocumentChunker.new(document).call
 
+    # Queue all embedding jobs asynchronously for parallel processing
     document.document_chunks.find_each do |chunk|
-      DocumentEmbeddingJob.perform_now(chunk.id)
+      DocumentEmbeddingJob.perform_later(chunk.id)
     end
   end
 end
