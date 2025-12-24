@@ -1,6 +1,8 @@
 <h2>Documents</h2>
 
 <%= button_to "Add Document", new_document_path, method: :get, class: "btn btn-primary" %>
+&nbsp;
+<%= button_to "Search", search_path, method: :get, class: "btn btn-primary" %>
 <br>
 <% if @documents.any? %>
   <ul class="card-list">

@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
-  root "workspaces#index"
-
-  get "/workspace", to: "workspaces#index"
-  get "/home", to: "workspaces#home"
+  root "documents#index"
   resources :documents, only: [ :index, :new, :create ]
   get "/search", to: "search#index"
   get  "/leave_requests",     to: "leave_requests#index"

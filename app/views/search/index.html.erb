@@ -11,15 +11,23 @@
   <% end %>
 
   <% if @query.present? %>
+    <% if @answer.present? %>
+      <div>
+        <h2 class="card-title">Answer</h2>
+        <div class="card">
+          <div class="card-content"><%= simple_format(@answer) %></div>
+        </div>
+      </div>
+    <% end %>
+
     <div>
-      <h2 class="card-title">Results</h2>
+      <h2 class="card-title">Sources</h2>
       <% if @chunks.present? %>
         <ul>
           <% @chunks.each do |c| %>
             <li class="card">
-              <div class="card-meta">Document: <%= c.document_id %> • Position: <%= c.position %></div>
+              <div class="card-meta">Document: <%= c.document_id %> • Position: <%= c.position %> • Distance: <%= c.distance.round(3) %></div>
               <div class="card-content"><%= c.content %></div>
-              <div class="card-meta">Distance: <%= c.distance %></div>
             </li>
           <% end %>
         </ul>
