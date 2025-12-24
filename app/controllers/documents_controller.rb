@@ -28,7 +28,18 @@ class DocumentsController < ApplicationController
     redirect_to documents_path, notice: "Document was successfully deleted."
   end
 
-  private
+  def edit
+    @document = Document.find(params[:id])
+  end
+
+  def update
+    @document = Document.find(params[:id])
+    if @document.update(document_params)
+      redirect_to documents_path, notice: "Document was successfully updated."
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
 
   def document_params
     params.require(:document).permit(:title, :content)
