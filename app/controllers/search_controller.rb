@@ -5,7 +5,14 @@ class SearchController < ApplicationController
     respond_to do |format|
       format.html do
         @query = query
-        @chunks = query.present? ? SemanticSearchService.search(query, limit: 5) : []
+
+        if query.present?
+          @chunks = SemanticSearchService.search(query, limit: 5)
+          @answer = AnswerGenerator.answer(query, @chunks)
+        else
+          @chunks = []
+          @answer = nil
+        end
       end
 
       format.json do
